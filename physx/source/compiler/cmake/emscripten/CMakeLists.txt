@@ -134,7 +134,7 @@ IF (PX_USE_MOLD_LINKER)
 	SET (PHYSX_CXX_FLAGS "${PHYSX_CXX_FLAGS} -Wno-unused-command-line-argument -fuse-ld=mold " CACHE INTERNAL "PhysX CXX")
 ENDIF()
 
-SET (PHYSX_CXX_FLAGS "${PHYSX_CXX_FLAGS} -pthreads")
+SET (PHYSX_CXX_FLAGS "${PHYSX_CXX_FLAGS} -pthread")
 
 # Build debug info for all configurations
 SET(PHYSX_CXX_FLAGS_DEBUG   "-O0 -g3 -gdwarf-2" CACHE INTERNAL "PhysX Debug CXX Flags")
