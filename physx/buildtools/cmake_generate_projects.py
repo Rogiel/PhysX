@@ -204,6 +204,11 @@ class CMakePreset:
                     outString = outString + ' -DCMAKE_C_COMPILER=clang'
                     outString = outString + ' -DCMAKE_CXX_COMPILER=clang++'
             return outString
+        elif self.targetPlatform == 'emscripten':
+            outString = outString + ' -DTARGET_BUILD_PLATFORM=emscripten'
+            outString = outString + ' -DPX_OUTPUT_ARCH=wasm32'
+            outString = outString + ' -DPX_SCALAR_MATH=ON'
+            return outString
         elif self.targetPlatform == 'linuxAarch64':
             outString = outString + ' -DTARGET_BUILD_PLATFORM=linux'
             outString = outString + ' -DPX_OUTPUT_ARCH=arm'
